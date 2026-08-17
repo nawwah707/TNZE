@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TNZE | VIP ACCESS</title>
+    <title>TNZE | OFFICIAL STORE</title>
     <style>
         * {
             margin: 0;
@@ -15,120 +15,164 @@
         body {
             background-color: #000000;
             color: #ffffff;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
-            padding: 20px;
+            padding: 20px 40px;
+            border-bottom: 1px solid #222222;
         }
 
         .logo {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 900;
-            letter-spacing: 6px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            letter-spacing: 5px;
         }
 
-        .status {
-            color: #ff0000;
+        .cart-status {
             font-size: 0.9rem;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            animation: blink 1.5s infinite;
+            letter-spacing: 1px;
+            cursor: pointer;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .lock-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-            max-width: 320px;
-        }
-
-        input[type="text"] {
-            background: transparent;
-            border: 2px solid #333333;
-            padding: 12px 15px;
-            color: #fff;
-            font-size: 1rem;
+        /* Banner */
+        .status-bar {
+            background-color: #111111;
             text-align: center;
-            outline: none;
-            transition: border-color 0.3s;
-            text-transform: uppercase;
+            padding: 10px;
+            font-size: 0.85rem;
+            color: #888888;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #222222;
         }
 
-        input[type="text"]:focus {
+        /* Products Grid */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            border: 1px solid #222222;
+            padding: 15px;
+            background-color: #050505;
+            transition: border-color 0.3s;
+        }
+
+        .product-card:hover {
             border-color: #ffffff;
         }
 
-        button {
+        .product-image {
+            width: 100%;
+            height: 320px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555555;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .product-price {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .add-btn {
+            width: 100%;
             background-color: #ffffff;
             color: #000000;
             border: none;
-            padding: 12px;
+            padding: 10px;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             letter-spacing: 1px;
             transition: background 0.3s;
         }
 
-        button:hover {
+        .add-btn:hover {
             background-color: #cccccc;
         }
 
-        .footer-note {
-            margin-top: 40px;
+        /* Footer */
+        footer {
+            border-top: 1px solid #222222;
+            padding: 30px 20px;
+            text-align: center;
+            color: #555555;
             font-size: 0.8rem;
-            color: #666666;
-        }
-
-        #errorMessage {
-            color: #ff3333;
-            font-size: 0.85rem;
-            display: none;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <div class="logo">TNZE</div>
-    <div class="status">● STORE CLOSED / NEXT DROP SOON</div>
+    <header>
+        <div class="logo">TNZE</div>
+        <div class="cart-status">CART (0)</div>
+    </header>
 
-    <form class="lock-form" id="accessForm">
-        <input type="text" id="passcodeInput" placeholder="ENTER ACCESS CODE" required>
-        <button type="submit">ENTER</button>
-        <div id="errorMessage">رمز الدخول غير صحيح</div>
-    </form>
-
-    <div class="footer-note">
-        انضم للقائمة البريدية أو انستغرام للحصول على رمز الدخول
+    <div class="status-bar">
+        ● DROP 001 IS NOW LIVE / LIMITED QUANTITIES
     </div>
 
-    <script>
-        // رمز الدخول الخاص بالبراند
-        const CORRECT_CODE = "TNZE 748";
+    <main>
+        <div class="products-grid">
+            <!-- المنتج الأول -->
+            <div class="product-card">
+                <div class="product-image">[ صورة المنتج 1 ]</div>
+                <div class="product-title">TNZE HEAVY HOODIE - BLACK</div>
+                <div class="product-price">280 SAR</div>
+                <button class="add-btn">ADD TO CART</button>
+            </div>
 
-        document.getElementById('accessForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const inputVal = document.getElementById('passcodeInput').value.trim();
-            const errorMsg = document.getElementById('errorMessage');
+            <!-- المنتج الثاني -->
+            <div class="product-card">
+                <div class="product-image">[ صورة المنتج 2 ]</div>
+                <div class="product-title">TNZE OVERSIZED TEE</div>
+                <div class="product-price">160 SAR</div>
+                <button class="add-btn">ADD TO CART</button>
+            </div>
 
-            if (inputVal.toUpperCase() === CORRECT_CODE.toUpperCase()) {
-                alert('تم الدخول بنجاح! سيتم تحويلك إلى متجر TNZE...');
-                // window.location.href = "shop.html";
-            } else {
-                errorMsg.style.display = 'block';
-            }
-        });
-    </script>
+            <!-- المنتج الثالث -->
+            <div class="product-card">
+                <div class="product-image">[ صورة المنتج 3 ]</div>
+                <div class="product-title">TNZE CARGO PANTS</div>
+                <div class="product-price">310 SAR</div>
+                <button class="add-btn">ADD TO CART</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 TNZE. ALL RIGHTS RESERVED.
+    </footer>
+
 </body>
 </html>
