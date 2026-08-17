@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE DROP | VIP ACCESS</title>
+    <title>TNZE | VIP ACCESS</title>
     <style>
         * {
             margin: 0;
@@ -25,9 +25,9 @@
         }
 
         .logo {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             margin-bottom: 10px;
             text-transform: uppercase;
         }
@@ -53,7 +53,7 @@
             max-width: 320px;
         }
 
-        input[type="password"] {
+        input[type="text"] {
             background: transparent;
             border: 2px solid #333333;
             padding: 12px 15px;
@@ -62,9 +62,10 @@
             text-align: center;
             outline: none;
             transition: border-color 0.3s;
+            text-transform: uppercase;
         }
 
-        input[type="password"]:focus {
+        input[type="text"]:focus {
             border-color: #ffffff;
         }
 
@@ -99,11 +100,11 @@
 </head>
 <body>
 
-    <div class="logo">YOUR BRAND NAME</div>
+    <div class="logo">TNZE</div>
     <div class="status">● STORE CLOSED / NEXT DROP SOON</div>
 
     <form class="lock-form" id="accessForm">
-        <input type="password" id="passcodeInput" placeholder="ENTER ACCESS CODE" required>
+        <input type="text" id="passcodeInput" placeholder="ENTER ACCESS CODE" required>
         <button type="submit">ENTER</button>
         <div id="errorMessage">رمز الدخول غير صحيح</div>
     </form>
@@ -113,17 +114,16 @@
     </div>
 
     <script>
-        // كلمة السر الافتراضية للدخول
-        const CORRECT_CODE = "1234";
+        // رمز الدخول الخاص بالبراند
+        const CORRECT_CODE = "TNZE 748";
 
         document.getElementById('accessForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const inputVal = document.getElementById('passcodeInput').value;
+            const inputVal = document.getElementById('passcodeInput').value.trim();
             const errorMsg = document.getElementById('errorMessage');
 
-            if (inputVal === CORRECT_CODE) {
-                // التوجيه إلى صفحة المنتجات أو إظهار محتوى المتجر
-                alert('تم التعدي بنجاح! سيتم تحويلك إلى المتجر...');
+            if (inputVal.toUpperCase() === CORRECT_CODE.toUpperCase()) {
+                alert('تم الدخول بنجاح! سيتم تحويلك إلى متجر TNZE...');
                 // window.location.href = "shop.html";
             } else {
                 errorMsg.style.display = 'block';
